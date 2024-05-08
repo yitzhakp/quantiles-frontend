@@ -1,0 +1,16 @@
+---
+import {excersice} from "../scripts/generateExcersice"
+import { ShowAnswer } from "./ShowAnswer"
+const data = excersice()
+const respuestaCorrecta = data.respuesta
+---
+
+<article class="w-auto my-5 bg-[#13151a] rounded flex-col pb-10 lg:mt-15 lg:pb-20">
+    <p class="p-10 text-4xl lg:text-5xl">
+        {data.enunciado}
+    </p>
+    <ShowAnswer respuesta={respuestaCorrecta} client:visible></ShowAnswer>
+
+</article>
+
+<style></style>
