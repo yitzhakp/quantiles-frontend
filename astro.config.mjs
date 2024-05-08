@@ -6,7 +6,9 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind()],
+  integrations: [react(), tailwind({
+    config: { applyAstroPreset: false, applyBaseStyles: true },
+  })],
   output: 'server',
   adapter: netlify()
 });
