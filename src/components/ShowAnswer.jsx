@@ -20,9 +20,9 @@ export function ShowAnswer(props) {
                     {others.map((option, index) => {
                         const isSelected = selectedAnswer === option;
                         const isCorrect = option === answer;
-                        const color = isSubmitted & isCorrect ? 'green' : (isSubmitted & isSelected & !isCorrect ? 'red' : (!isSubmitted & isSelected) ? 'yellow' : 'gray')
+                        const color = isSubmitted & isCorrect ? 'border-green-500' : (isSubmitted & isSelected & !isCorrect ? 'border-red-500' : (!isSubmitted & isSelected) ? 'border-yellow-500' : 'border-gray-500')
                         return (
-                            <label key={index} className={`flex items-center border rounded-lg p-2 shadow-md ${!isSubmitted ? 'cursor-pointer' : ''} border-${color}-500`}>
+                            <label key={index} className={`flex items-center border rounded-lg p-2 shadow-md ${!isSubmitted ? 'cursor-pointer' : ''} ${color}`}>
                                 <input
                                     type="radio"
                                     name="answer"
