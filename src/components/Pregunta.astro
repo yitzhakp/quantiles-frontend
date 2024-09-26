@@ -1,18 +1,22 @@
 ---
-import {excersice} from "../scripts/generateExcersice"
+
 import { ShowAnswer } from "./ShowAnswer"
-const data = excersice()
-const respuestaCorrecta = data.respuesta
-console.log("Hola")
+
+
+
+const problem = await fetch('https://nutritious-sallyanne-yitzhakp-2ef75de7.koyeb.app/')
+  .then(respuesta => respuesta.json())
+  .then(datos => datos)
+  .catch(error => error)
 ---
 
-<article class="w-auto my-5 bg-[#13151a] rounded flex-col pb-10 lg:mt-15 lg:pb-20">
+<article class="w-9/10 my-5 p-5 bg-[#13151a] rounded flex-col pb-10 lg:mt-15 lg:pb-20">
     <p class="p-10 text-4xl lg:text-5xl">
-        {data.enunciado}
+        {problem.question}
     </p>
-    <ShowAnswer respuesta={respuestaCorrecta} client:visible></ShowAnswer>
+    <ShowAnswer answer={problem.answer} others={problem.others} client:visible></ShowAnswer>
 
 </article>
-<script src="../scripts/generateExcersice"></script>
+
 
 <style></style>
