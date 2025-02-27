@@ -2,6 +2,12 @@
 
 import { ShowAnswer } from "./ShowAnswer"
 
+/*export interface Props {
+  question: number;
+}
+
+const { question } = Astro.props;
+*/
 const problem = await fetch('https://nutritious-sallyanne-yitzhakp-2ef75de7.koyeb.app/')
   .then(respuesta => respuesta.json())
   .then(datos => datos)

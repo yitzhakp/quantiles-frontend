@@ -1,16 +1,17 @@
 import { useState } from "react";
 
 export function ShowAnswer(props) {
-    const { answer, others } = props
-    const [isSubmitted, setIsSubmitted] = useState(false)
-    const [selectedAnswer, setSelectedAnswer] = useState('');
-
+    const { answer, others, oneMorePoint, oneMoreTotal, isSubmitted, setIsSubmitted, selectedAnswer, setSelectedAnswer } = props
     const handleAnswerOptionClick = (answer) => {
         setSelectedAnswer(answer);
     };
 
     const handleCheckAnswer = () => {
         setIsSubmitted(true)
+        oneMoreTotal()
+        if (selectedAnswer === answer) {
+            oneMorePoint()
+        }
     }
 
     return (
