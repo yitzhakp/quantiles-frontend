@@ -21,9 +21,8 @@ export function QuestionAndNext(props) {
 
     const nextQuestion = () => {
         setQuestion(question + 1);
-        if (selectedAnswer === ""){
+        if (!isSubmitted){
             setTotal(total + 1);
-            return
         }
         setSelectedAnswer('');
         setIsSubmitted(false)
