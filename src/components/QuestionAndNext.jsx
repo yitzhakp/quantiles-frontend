@@ -70,7 +70,7 @@ export function QuestionAndNext(props) {
             <p className="mt-5 text-xl">Score: {points}/{total}</p>
             {problem ? (
                 <article className="w-9/10 mt-5 p-5 bg-[#13151a] rounded flex-col pb-10 lg:mt-15 lg:pb-20">
-                    <p className="p-10 text-3xl ">
+                    <p className="px-18 mb-5 text-3xl ">
                         {problem.question}
                     </p>
                     <ShowAnswer selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer} isSubmitted={isSubmitted} setIsSubmitted={setIsSubmitted} oneMorePoint={oneMorePoint} oneMoreTotal={oneMoreTotal} answer={problem.answer} others={problem.others} client:visible></ShowAnswer>
@@ -79,9 +79,9 @@ export function QuestionAndNext(props) {
                 <p>Loading...</p>
             )}
 
-            <div className="mt-5 flex w-3/5 min-w-96 justify-between items-center">
+            <div className="mt-10 mb-16 flex w-3/5 min-w-80 justify-around items-center">
                 <div className="flex items-center justify-center cursor-pointer" onClick={toggleConfig}>
-                    <p className="text-2xl text-center justify-center">Configuración {isOpen}</p>
+                    <p className="text-base text-center justify-center lg:text-2xl">Configuración {isOpen}</p>
                     <img className="mx-2" src="config.svg" alt="" width="30px" />
                 </div>
 
@@ -104,7 +104,7 @@ export function QuestionAndNext(props) {
                     <span
                         className="relative px-5 py-2.5 transition-all ease-in duration-500 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
                     >
-                        Siguiente 🏅
+                        Siguiente
                     </span>
                 </button>
             </div>
